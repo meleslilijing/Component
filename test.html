@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<title>index</title>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script src="./Component.js"></script>
+		<script>
+			var banner = new Component({
+				bindEvent: function(parent) {
+					parent.addEventListener('click', function() {
+						alert('onClick')
+					}, false)
+				},
+				render: function(parent) {
+					var testDom = document.createElement('div')
+					testDom.innerHTML = 'testDom'
+					parent.appendChild(testDom)			
+				}
+			});
+
+			var root = document.querySelector('#root');
+			banner.init(root);
+		</script>
+	</body>
+</html>
